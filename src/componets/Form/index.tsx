@@ -32,7 +32,9 @@ export default class Form extends Component {
                         required
                     />
                 </div>
-                <Button/>
+                <Button>
+                    Adicionar
+                </Button>
             </form>
         )
     }
