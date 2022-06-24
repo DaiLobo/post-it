@@ -7,9 +7,10 @@ import style from './Stopwatch.module.scss';
 
 interface Props {
     selecionado: ITarefa | undefined,
+    finalizarTarefa: () => void,
 }
 
-export default function Stopwatch({ selecionado }: Props) {
+export default function Stopwatch({ selecionado, finalizarTarefa }: Props) {
 
     const [tempo, setTempo] = useState<number>();
 
@@ -25,6 +26,7 @@ export default function Stopwatch({ selecionado }: Props) {
                 setTempo(contador - 1);
                 return regressiva(contador - 1);
             }
+            finalizarTarefa();
         }, 1000)
     }
 
