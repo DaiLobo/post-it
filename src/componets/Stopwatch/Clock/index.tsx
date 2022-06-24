@@ -4,7 +4,7 @@ interface Props {
     tempo: number | undefined,
 }
 
-export default function Clock({ tempo ={}}: Props) {
+export default function Clock({ tempo = 0}: Props) {
 
     const minutos = Math.floor(tempo / 60);
     const segundos = tempo % 60;

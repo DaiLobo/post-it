@@ -1,11 +1,18 @@
 import React from 'react';
 import style from './style.module.scss'
 
-export default class Button extends React.Component<{type?: 'button' | 'submit' | 'reset' | undefined}> {
+export default class Button extends React.Component<{
+    type?: 'button' | 'submit' | 'reset' | undefined,
+    onClick?: () => void,
+}> {
     render() {
-        const { type = 'button' } = this.props;
+        const { type = 'button', onClick } = this.props;
         return (
-            <button type={type} className={style.botao}>
+            <button 
+                type={type}
+                className={style.botao}
+                onClick={onClick}
+            >
                  {this.props.children}
             </button>
         )
